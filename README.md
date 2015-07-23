@@ -1,13 +1,13 @@
-#### cleanm4a
-Remove all unwanted tags. Keep cover/artwork. Force trackID to "1".<br>
-**No audio re-encoding.**
+#### Goal
+Remove all unwanted tags - Keep cover/artwork - Force trackID to "1"<br>
+**No audio re-encoding**
 
-#### Issues on m4a files solved with the script
-- m4a files are not correctly played (no sound) on iOS if trackID is 0. 
-- It's impossible to directly change the trackID value.
+#### Issues on m4a files : nosound on iOS or undesired tags
+- m4a files are not correctly played (no sound) on iOS if trackID is 0
+- It's impossible to directly change the trackID value
 - In Apple world with iTunes / iTunesMatch / etc., some tags contain personnal data (AppleId / Name / email ...)
 - Common tools cannot remove these Apple undesired tags
-- I didn't want to re-encore all my music library.
+- I didn't want to re-encore all my music library
 
 #### Required programs to run the script
 - [ffmpeg] (http://ffmpegmac.net)
@@ -18,7 +18,7 @@ Remove all unwanted tags. Keep cover/artwork. Force trackID to "1".<br>
 Use automator to add it as a service and create a shortcut for context menu
 
 #### Run on MacOSX
-- Track to clean (filename with extension) must be the 1st argument on command line
+- file to clean must be the 1st argument on command line
 - To apply cleaning for all the tracks in a folder, add these lines :<br>
   ```
   for m4afile in *.m4a
