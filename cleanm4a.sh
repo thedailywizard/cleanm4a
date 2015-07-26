@@ -39,7 +39,19 @@ ffmpeg -i "$m4afile.aac" -i "$m4afile-metadata.txt" -map_metadata 1 -c:a copy -a
 # mv "$m4afile-metadata.txt" backup/
 	
 # Add cover /artwork
-MP4Box -itags cover="$m4afile_name.png" "$m4afile"  
+if [ -f "$m4afile_name.png" ]
+then
+	echo "Cover found : $m4afile_name.png"
+	MP4Box -itags cover="$m4afile_name.png" "$m4afile"
+	rm "$m4afile_name.png"
+elif [ -f "$m4afile_name.jpg" ]
+then
+	echo "Cover found : $m4afile_name.jpg"
+	MP4Box -itags cover="$m4afile_name.jpg" "$m4afile"
+	rm "$m4afile_name.jpg"
+else
+   echo "[ERROR] ******** NO cover/artwork jpg/png for $m4afile_name"
+fi
 
 # Optional cleaning
 rm "$m4afile.aac"
