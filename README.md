@@ -27,7 +27,7 @@ Use automator to add it as a service and create a shortcut for context menu
     done
   ```
 - To run the script on the full library (folders with subfolders etc.) use a find command as :<br>
-` find ./ - type f -name "*.m4a" -exec cleanm4a.sh {} \; ` 
+` find ./ -type f -name "*.m4a" -exec cleanm4a.sh "{}" \; ` 
 
 
 
